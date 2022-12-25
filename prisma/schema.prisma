@@ -12,7 +12,8 @@ model User {
   provider_id     String    @unique
   hashed_password String?
   session         Session[]
-  username        String    @unique
+  username        String
+
 
   @@map("user")
 }
