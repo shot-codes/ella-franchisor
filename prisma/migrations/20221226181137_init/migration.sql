@@ -5,6 +5,7 @@ CREATE TABLE "user" (
     "hashed_password" TEXT,
     "username" TEXT NOT NULL,
     "email" TEXT,
+    "avatar_url" TEXT,
 
     CONSTRAINT "user_pkey" PRIMARY KEY ("id")
 );

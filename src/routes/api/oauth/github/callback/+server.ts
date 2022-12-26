@@ -28,6 +28,7 @@ export const GET = (async ({ url, cookies }) => {
     (await createUser({
       username: providerUser.name,
       email: providerUser.email,
+      avatar_url: providerUser.avatar_url,
     }));
 
   const newSession = await auth.createSession(user.userId);
