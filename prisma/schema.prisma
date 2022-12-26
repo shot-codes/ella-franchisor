@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "cockroachdb"
   url      = env("PRISMA_DATABASE_URL")
 }
 
@@ -13,7 +13,7 @@ model User {
   hashed_password String?
   session         Session[]
   username        String
-
+  email           String?
 
   @@map("user")
 }

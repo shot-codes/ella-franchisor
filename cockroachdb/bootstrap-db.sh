@@ -1,0 +1,1 @@
+docker compose exec crdb-0 /cockroach/cockroach sql --insecure --execute="CREATE DATABASE test;"
