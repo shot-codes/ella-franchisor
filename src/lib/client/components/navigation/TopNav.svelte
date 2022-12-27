@@ -1,7 +1,11 @@
 <script lang="ts">
   import { getUser, signOut } from "@lucia-auth/sveltekit/client";
   import { invalidateAll } from "$app/navigation";
-  import { slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
+  import logo from "$lib/assets/ella-logo.svg";
+  import darkLogo from "$lib/assets/ella-logo-dark.svg";
+  import { browser } from "$app/environment";
+  console.log(logo);
 
   const user = getUser();
   const username = $user?.username;
@@ -9,11 +13,28 @@
   const avatar_url = $user?.avatar_url;
 
   let settingsExpanded = false;
+  let isDarkMode = false;
+
+  if (browser && window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
+    isDarkMode = true;
+  }
+  if (browser) {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", () => {
+        isDarkMode = !isDarkMode;
+      });
+  }
 </script>
 
 <nav
-  class="fixed flex h-[64px] w-full items-center justify-end space-x-4 bg-base-100 bg-opacity-30 p-3  px-6 shadow backdrop-blur-md"
+  class="fixed flex h-[86px] w-full place-content-between items-center bg-base-100 bg-opacity-30 p-3 px-12 shadow backdrop-blur-md dark:bg-base_dark-900 dark:bg-opacity-80"
 >
+  {#if isDarkMode}
+    <img src={darkLogo} class="w-16" alt="ella logo." />
+  {:else}
+    <img src={logo} class="w-16" alt="ella logo." />
+  {/if}
   <img
     on:click={() => {
       settingsExpanded = !settingsExpanded;
@@ -29,8 +50,8 @@
 
 {#if settingsExpanded}
   <div
-    transition:slide
-    class="absolute right-3 top-14 z-10 flex w-[240px] rounded border border-base-300 bg-base-50 shadow-md"
+    transition:fade={{ duration: 100 }}
+    class="fixed right-3 top-[75px] z-10 flex w-[240px] rounded border border-base-300 bg-base-50 shadow-md dark:border-base_dark-700 dark:bg-base_dark-800 dark:shadow-xl"
   >
     <button
       on:click={() => {
@@ -46,8 +67,10 @@
       >
     </button>
     <div class="m-6 flex w-full flex-col">
-      <span class="font-bold text-base-800">{username}</span>
-      <span class="text-base-500">{email}</span>
+      <span class="font-bold text-text-major dark:text-text_dark-major"
+        >{username}</span
+      >
+      <span class="text-text-minor dark:text-text_dark-minor">{email}</span>
       <button
         class="gg-btn-secondary mt-4 w-full"
         on:click={async () => {

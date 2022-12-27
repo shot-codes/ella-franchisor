@@ -6,7 +6,7 @@
       data-sveltekit-preload-data="off"
       class="gg-oauth-login-btn"
     >
-      <div class="w-7 text-base-700">
+      <div class="w-7 text-base-700 dark:text-base_dark-400">
         <svg viewBox="0 0 24 24"
           ><path
             fill="currentColor"

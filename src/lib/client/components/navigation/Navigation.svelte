@@ -5,7 +5,7 @@
 
 <div class="flex h-full flex-col">
   <!-- Top Nav -->
-  <div class="min-h-[64px]">
+  <div class="min-h-[86px]">
     <TopNav />
   </div>
 

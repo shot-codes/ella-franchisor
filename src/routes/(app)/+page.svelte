@@ -4,7 +4,7 @@
   const user = getUser();
 </script>
 
-<h1 class="font-bold text-text-dark">Profile</h1>
+<h1 class="text-text-dark font-bold">Profile</h1>
 <div>
   <p>User id: {$user?.userId}</p>
   <p>Username: {$user?.username}</p>
