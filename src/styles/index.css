@@ -6,8 +6,31 @@
 
 html {
   @apply h-full bg-base-200 text-text-major dark:bg-base_dark-850 dark:text-text_dark-major;
+  font-family: rubik;
 }
 
 body {
   @apply h-full;
+}
+
+/* rubik-regular - latin */
+@font-face {
+  font-family: "rubik";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("$lib/assets/fonts/rubik-v23-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("$lib/assets/fonts/rubik-v23-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* rubik-800 - latin */
+@font-face {
+  font-family: "rubikheavy";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""),
+    url("$lib/assets/fonts/rubik-v23-latin-800.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("$lib/assets/fonts/rubik-v23-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

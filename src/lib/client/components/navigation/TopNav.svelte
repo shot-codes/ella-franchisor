@@ -2,9 +2,11 @@
   import { getUser, signOut } from "@lucia-auth/sveltekit/client";
   import { invalidateAll } from "$app/navigation";
   import { fade } from "svelte/transition";
-  import logo from "$lib/assets/ella-logo.svg";
-  import darkLogo from "$lib/assets/ella-logo-dark.svg";
+  import logo from "$lib/assets/images/ella-logo.svg";
+  import darkLogo from "$lib/assets/images/ella-logo-dark.svg";
   import { browser } from "$app/environment";
+
+  export let showSidebar: boolean;
 
   const user = getUser();
   const username = $user?.username;
@@ -29,11 +31,30 @@
 <nav
   class="fixed flex h-[86px] w-full place-content-between items-center bg-base-100 bg-opacity-30 p-3 px-12 shadow backdrop-blur-md dark:bg-base_dark-900 dark:bg-opacity-80"
 >
+  <button
+    class="text-text-minor dark:text-text_dark-minor lg:hidden"
+    on:click={() => {
+      showSidebar = !showSidebar;
+    }}
+  >
+    <svg width="32" height="32" viewBox="0 0 24 24"
+      ><path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h7"
+      /></svg
+    >
+  </button>
+
   {#if isDarkMode}
     <img src={darkLogo} class="w-16" alt="ella logo." />
   {:else}
     <img src={logo} class="w-16" alt="ella logo." />
   {/if}
+
   <img
     on:click={() => {
       settingsExpanded = !settingsExpanded;

@@ -31,6 +31,10 @@ module.exports = {
           minor: "#81818d",
           accent: "#f4bab3",
         },
+        fontFamily: {
+          rubik: ["rubik"],
+          rubikheavy: ["rubikheavy"],
+        },
       }),
     },
   },
