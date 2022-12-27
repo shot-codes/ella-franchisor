@@ -10,6 +10,7 @@ import { redirect } from "@sveltejs/kit";
 const githubAuth = github(auth, {
   clientId: OUATH_GITHUB_CLIENT_ID,
   clientSecret: OUATH_GITHUB_CLIENT_SECRET,
+  scope: ["user:email"],
 });
 
 export const GET = (({ cookies }) => {

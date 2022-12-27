@@ -13,7 +13,8 @@ model User {
   hashed_password String?
   session         Session[]
   username        String
-
+  email           String?
+  avatar_url      String?
 
   @@map("user")
 }

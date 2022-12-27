@@ -1,0 +1,7 @@
+.gg-oauth-login-btn {
+  @apply flex w-full justify-center space-x-3 rounded bg-base-50 p-3 text-center align-baseline shadow dark:bg-base_dark-800 dark:text-text_dark-major;
+}
+
+.gg-btn-secondary {
+  @apply h-10 rounded border border-base-300 bg-base-100 p-1 px-4 text-base-900 dark:border-base_dark-700 dark:bg-base_dark-850 dark:text-text_dark-major;
+}

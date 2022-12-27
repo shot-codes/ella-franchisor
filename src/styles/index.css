@@ -1,0 +1,13 @@
+@import "./components.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply h-full bg-base-200 text-text-major dark:bg-base_dark-850 dark:text-text_dark-major;
+}
+
+body {
+  @apply h-full;
+}

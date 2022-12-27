@@ -4,6 +4,8 @@ CREATE TABLE "user" (
     "provider_id" TEXT NOT NULL,
     "hashed_password" TEXT,
     "username" TEXT NOT NULL,
+    "email" TEXT,
+    "avatar_url" TEXT,
 
     CONSTRAINT "user_pkey" PRIMARY KEY ("id")
 );
@@ -23,9 +25,6 @@ CREATE UNIQUE INDEX "user_id_key" ON "user"("id");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "user_provider_id_key" ON "user"("provider_id");
-
--- CreateIndex
-CREATE UNIQUE INDEX "user_username_key" ON "user"("username");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "session_id_key" ON "session"("id");

@@ -10,6 +10,7 @@ import { error, redirect } from "@sveltejs/kit";
 const githubAuth = github(auth, {
   clientId: OUATH_GITHUB_CLIENT_ID,
   clientSecret: OUATH_GITHUB_CLIENT_SECRET,
+  scope: ["user:email"],
 });
 
 export const GET = (async ({ url, cookies }) => {
@@ -25,6 +26,8 @@ export const GET = (async ({ url, cookies }) => {
     existingUser ||
     (await createUser({
       username: providerUser.name,
+      email: providerUser.email,
+      avatar_url: providerUser.avatar_url,
     }));
 
   const newSession = await auth.createSession(user.userId);
