@@ -5,7 +5,6 @@
   import logo from "$lib/assets/ella-logo.svg";
   import darkLogo from "$lib/assets/ella-logo-dark.svg";
   import { browser } from "$app/environment";
-  console.log(logo);
 
   const user = getUser();
   const username = $user?.username;
