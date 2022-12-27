@@ -2,7 +2,7 @@
   <h1 class="text-3xl font-bold">Log in</h1>
   <div class="flex w-96 flex-col p-8">
     <a
-      href={"/api/oauth/github"}
+      href={"/auth/oauth/github"}
       data-sveltekit-preload-data="off"
       class="gg-oauth-login-btn"
     >
