@@ -4,7 +4,7 @@
   import SideNavMobile from "./SideNavMobile.svelte";
   import { fade } from "svelte/transition";
 
-  let showSidebar = true;
+  let showSidebar = false;
 </script>
 
 <div class="flex h-full flex-col">

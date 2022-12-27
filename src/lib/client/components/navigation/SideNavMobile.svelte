@@ -4,12 +4,14 @@
   export let showSidebar: boolean;
 
   const closeSidebar = () => {
-    showSidebar = false;
+    setTimeout(() => {
+      showSidebar = false;
+    }, 250);
   };
 </script>
 
 <ul
-  class="fixed flex h-full w-full flex-col space-y-2 bg-base_dark-850 p-6 text-lg text-text-minor"
+  class="fixed flex h-full w-full flex-col space-y-2 bg-base-200 p-6 text-lg text-text-minor dark:bg-base_dark-850"
 >
   <li>
     <a
