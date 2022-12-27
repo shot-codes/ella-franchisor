@@ -22,7 +22,6 @@ export const GET = (async ({ url, cookies }) => {
 
   const { existingUser, providerUser, createUser } =
     await githubAuth.validateCallback(code);
-  console.log(providerUser);
   const user =
     existingUser ||
     (await createUser({
