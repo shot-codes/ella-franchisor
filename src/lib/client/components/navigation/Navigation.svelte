@@ -1,8 +1,10 @@
 <script lang="ts">
   import TopNav from "./TopNav.svelte";
   import SideNav from "./SideNav.svelte";
+  import SideNavMobile from "./SideNavMobile.svelte";
+  import { fade } from "svelte/transition";
 
-  let showSidebar = false;
+  let showSidebar = true;
 </script>
 
 <div class="flex h-full flex-col">
@@ -19,8 +21,12 @@
 
     <!-- Mobile Side Nav -->
     {#if showSidebar}
-      <div class="absolute w-full">
-        <SideNav />
+      <div
+        transition:fade={{ duration: 250, delay: 50 }}
+        class="absolute w-full lg:hidden"
+      >
+        <div class="fixed top-0 right-0 h-full w-full dark:bg-[#181818]" />
+        <SideNavMobile bind:showSidebar />
       </div>
     {/if}
 
