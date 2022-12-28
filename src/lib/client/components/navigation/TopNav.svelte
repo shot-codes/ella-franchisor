@@ -1,10 +1,8 @@
 <script lang="ts">
   import { getUser, signOut } from "@lucia-auth/sveltekit/client";
   import { invalidateAll } from "$app/navigation";
-  import logo from "$lib/assets/images/ella-logo.svg";
-  import darkLogo from "$lib/assets/images/ella-logo-dark.svg";
-  import { browser } from "$app/environment";
   import { fade } from "svelte/transition";
+  import Logo from "../Logo.svelte";
 
   export let showSidebar: boolean;
 
@@ -14,18 +12,6 @@
   const avatar_url = $user?.avatar_url;
 
   let settingsExpanded = false;
-  let isDarkMode = false;
-
-  if (browser && window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
-    isDarkMode = true;
-  }
-  if (browser) {
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", () => {
-        isDarkMode = !isDarkMode;
-      });
-  }
 </script>
 
 <nav
@@ -76,11 +62,7 @@
     </div>
   </button>
 
-  {#if isDarkMode}
-    <img src={darkLogo} class="w-16" alt="ella logo." />
-  {:else}
-    <img src={logo} class="w-16" alt="ella logo." />
-  {/if}
+  <Logo scale={0.7} />
 
   <img
     on:click={() => {

@@ -1,5 +1,12 @@
+<script lang="ts">
+  import { enhance } from "$app/forms";
+  import Logo from "$lib/client/components/Logo.svelte";
+</script>
+
 <div class="flex h-full flex-col items-center justify-center">
-  <h1 class="mb-5 text-3xl font-bold">Log in</h1>
+  <div class="mb-12">
+    <Logo scale={1.5} />
+  </div>
 
   <div class="flex w-96 flex-col p-1">
     <a
@@ -35,5 +42,23 @@
       </div>
       <span class="pt-[2px]">Continue with Google</span>
     </a>
+  </div>
+
+  <div class=" mt-10 flex w-96 flex-col space-y-2 p-1">
+    <h2 class="mx-auto mb-2 text-text-minor">Sign in with credentials</h2>
+    <form class="ella-form" method="POST" use:enhance>
+      <input type="text" id="username" name="username" placeholder="username" />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="password"
+      />
+      <input type="submit" value="Continue" />
+    </form>
+    <div class="pt-1 text-text-minor">
+      Don't have an account?
+      <a href="/auth/signup" class="text-text-accent underline">Sign up</a>
+    </div>
   </div>
 </div>

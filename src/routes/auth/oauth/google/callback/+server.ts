@@ -23,8 +23,6 @@ export const GET = (async ({ url, cookies }) => {
   const authState = url.searchParams.get("state") ?? "";
   const storedAuthState = cookies.get("authState");
 
-  console.log(code);
-
   if (authState !== storedAuthState) throw error(500, "Auth state mismatch.");
   const { existingUser, providerUser, createUser } =
     await googleAuth.validateCallback(code);

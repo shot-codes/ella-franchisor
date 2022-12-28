@@ -7,11 +7,11 @@ export const handle = sequence(
   handleHooks(auth),
   async ({ event, resolve }) => {
     if (
-      event.url.pathname !== "/login" &&
-      !event.url.pathname.includes("/auth/oauth")
+      event.url.pathname !== "/auth/signin" &&
+      !event.url.pathname.includes("/auth/")
     ) {
       const session = await event.locals.validate();
-      if (!session) throw redirect(302, "/login");
+      if (!session) throw redirect(302, "/auth/signin");
     }
 
     return await resolve(event);

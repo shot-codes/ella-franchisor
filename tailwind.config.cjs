@@ -23,8 +23,8 @@ module.exports = {
         },
         text: {
           major: "#2E315B",
-          minor: "#777bac",
-          accent: "#ea786c",
+          minor: "#7e7e9a",
+          accent: "#ee9187",
         },
         text_dark: {
           major: "#c0c0c6",

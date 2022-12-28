@@ -4,7 +4,9 @@
   const user = getUser();
 </script>
 
-<h1 class="text-text-dark font-rubikheavy">Profile</h1>
+<h1 class="text-text-dark font-rubikheavy text-[50px]">
+  Welcome Back {$user?.username}
+</h1>
 <div>
   <p>User id: {$user?.userId}</p>
   <p>Username: {$user?.username}</p>
