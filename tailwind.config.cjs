@@ -7,6 +7,7 @@ module.exports = {
         base: colors.gray,
         base_dark: {
           ...colors.zinc,
+          750: "#2d2d30",
           850: "#202023",
         },
         primary: {

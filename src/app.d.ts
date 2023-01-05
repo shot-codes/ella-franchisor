@@ -1,6 +1,6 @@
 /// <reference types="lucia-auth" />
 declare namespace Lucia {
-  type Auth = import("$lib/server/lucia").Auth;
+  type Auth = import("$lib/server/auth/lucia").Auth;
   type UserAttributes = {
     username: string;
     email: string;

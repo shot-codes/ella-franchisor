@@ -29,3 +29,23 @@ model Session {
   @@index([user_id])
   @@map("session")
 }
+
+model AuthorizationPolicy {
+  id           String        @id @unique @default(cuid())
+  organization Organization?
+}
+
+model Organization {
+  id                    String              @id @unique @default(cuid())
+  name                  String
+  picture_url           String
+  policy                AuthorizationPolicy @relation(fields: [authorizationPolicyId], references: [id])
+  authorizationPolicyId String              @unique
+
+  @@map("organization")
+}
+
+enum Role {
+  USER
+  ADMIN
+}

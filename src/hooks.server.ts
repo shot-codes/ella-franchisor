@@ -1,4 +1,4 @@
-import { auth } from "$lib/server/lucia";
+import { auth } from "$lib/server/auth/lucia";
 import { handleHooks } from "@lucia-auth/sveltekit";
 import { redirect } from "@sveltejs/kit";
 import { sequence } from "@sveltejs/kit/hooks";

@@ -19,7 +19,7 @@
       />
       <input type="submit" value="Signup" />
     </form>
-    <div class="text-text-minor">
+    <div class="text-text-minor dark:text-text_dark-minor">
       Already have an account, or want to sign in with a provider?
       <a href="/auth/signin" class="text-text-accent underline">Sign in</a>
     </div>

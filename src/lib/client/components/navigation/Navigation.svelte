@@ -25,7 +25,9 @@
         transition:fade={{ duration: 250, delay: 50 }}
         class="absolute w-full lg:hidden"
       >
-        <div class="fixed top-0 right-0 h-full w-full dark:bg-[#181818]" />
+        <div
+          class="fixed top-0 right-0 h-full w-full bg-base-100 dark:bg-[#181818]"
+        />
         <SideNavMobile bind:showSidebar />
       </div>
     {/if}

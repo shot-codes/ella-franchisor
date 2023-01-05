@@ -1,17 +1,7 @@
 import type { RequestHandler } from "./$types";
-import {
-  OUATH_GITHUB_CLIENT_ID,
-  OUATH_GITHUB_CLIENT_SECRET,
-} from "$env/static/private";
-import github from "@lucia-auth/oauth/github";
-import { auth } from "$lib/server/lucia";
+import { auth } from "$lib/server/auth/lucia";
 import { error, redirect } from "@sveltejs/kit";
-
-const githubAuth = github(auth, {
-  clientId: OUATH_GITHUB_CLIENT_ID,
-  clientSecret: OUATH_GITHUB_CLIENT_SECRET,
-  scope: ["user:email"],
-});
+import { githubAuth } from "$lib/server/auth/oauth/github";
 
 export const GET = (async ({ url, cookies }) => {
   const code = url.searchParams.get("code") ?? "";
@@ -20,6 +10,7 @@ export const GET = (async ({ url, cookies }) => {
 
   if (authState !== storedAuthState) throw error(500, "Auth state mismatch.");
 
+  console.log(code);
   const { existingUser, providerUser, createUser } =
     await githubAuth.validateCallback(code);
   const user =

@@ -1,10 +1,10 @@
 .ella-form {
-  @apply flex flex-col space-y-[5px];
+  @apply flex flex-col space-y-[5px] dark:text-text_dark-major;
 }
 
 .ella-form > input[type="text"],
 .ella-form > input[type="password"] {
-  @apply w-full rounded border border-base-300 bg-base-50 p-2 dark:border-base_dark-900 dark:bg-base_dark-800;
+  @apply w-full rounded border border-base-300 bg-base-50 p-2 dark:border-base_dark-900 dark:bg-base_dark-750;
   box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.05);
   box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.05);
 }
@@ -13,7 +13,7 @@
 }
 
 .gg-oauth-login-btn {
-  @apply flex w-full justify-center space-x-3 rounded bg-base-50 p-3 text-center align-baseline shadow dark:bg-base_dark-800 dark:text-text_dark-major;
+  @apply flex w-full justify-center space-x-3 rounded bg-base-50 p-3 text-center align-baseline shadow dark:bg-base_dark-700 dark:text-text_dark-major;
 }
 
 .gg-btn-secondary {

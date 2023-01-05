@@ -45,7 +45,9 @@
   </div>
 
   <div class=" mt-10 flex w-96 flex-col space-y-2 p-1">
-    <h2 class="mx-auto mb-2 text-text-minor">Sign in with credentials</h2>
+    <h2 class="mx-auto mb-2 text-text-minor dark:text-text_dark-minor">
+      Continue with credentials
+    </h2>
     <form class="ella-form" method="POST" use:enhance>
       <input type="text" id="username" name="username" placeholder="username" />
       <input
@@ -56,7 +58,7 @@
       />
       <input type="submit" value="Continue" />
     </form>
-    <div class="pt-1 text-text-minor">
+    <div class="pt-1 text-text-minor dark:text-text_dark-minor">
       Don't have an account?
       <a href="/auth/signup" class="text-text-accent underline">Sign up</a>
     </div>

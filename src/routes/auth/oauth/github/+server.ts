@@ -1,17 +1,6 @@
 import type { RequestHandler } from "./$types";
-import {
-  OUATH_GITHUB_CLIENT_ID,
-  OUATH_GITHUB_CLIENT_SECRET,
-} from "$env/static/private";
-import github from "@lucia-auth/oauth/github";
-import { auth } from "$lib/server/lucia";
 import { redirect } from "@sveltejs/kit";
-
-const githubAuth = github(auth, {
-  clientId: OUATH_GITHUB_CLIENT_ID,
-  clientSecret: OUATH_GITHUB_CLIENT_SECRET,
-  scope: ["user:email"],
-});
+import { githubAuth } from "$lib/server/auth/oauth/github";
 
 export const GET = (({ cookies }) => {
   const [authUrl, state] = githubAuth.getAuthorizationUrl();
